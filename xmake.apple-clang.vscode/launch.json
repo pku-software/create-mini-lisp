@@ -3,12 +3,14 @@
   // 安装 CodeLLDB VS Code 扩展以启用调试功能
  "configurations": [
     {
-      "type": "lldb",
       "name": "(lldb) launch",
+      "type": "lldb",
       "request": "launch",
       "program": "${workspaceFolder}/bin/mini_lisp",
+      "args": [],
+      "cwd": "${workspaceFolder}",
       "preLaunchTask": "xmake build",
-      "terminal": "external"
+      "console": "externalTerminal"
     }
   ]
 }
