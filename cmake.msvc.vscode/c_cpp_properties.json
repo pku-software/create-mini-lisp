@@ -4,6 +4,8 @@
     {
       "name": "Win32",
       "configurationProvider": "ms-vscode.cmake-tools"
+      // 如果使用 clangd，则注释上一行，启用下一行
+      // "compileCommands": "${workspaceFolder}/compile_commands.json"
     }
   ]
 }
