@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "update intellisense",
+      "command": "xmake",
+      "args": [
+        "project",
+        "-k",
+        "compile_commands",
+        // 如果使用 clangd，则改为 "${workspaceFolder}"
+        "${workspaceFolder}/.vscode"
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "never",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "xmake configure",
+      "command": "xmake",
+      "args": [
+        "f",
+        "-mdebug"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "xmake build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "command": "xmake",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "run and pause",
+      "dependsOn": "xmake build",
+      "type": "pause-console",
+      "command": "xmake",
+      "args": [
+        "r"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
