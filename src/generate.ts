@@ -19,11 +19,11 @@ const VSCODE_FILES = ["tasks.json", "launch.json", "c_cpp_properties.json"];
 function getIdeUrls(ide: string, platform: string, tool: string) {
   switch (ide) {
     case "vs":
-      return VS_FILES.map((f) => "/vs/" + f);
+      return VS_FILES.map((f) => "./vs/" + f);
     case "clion":
-      return CLION_FILES.map((f) => "/clion/" + f);
+      return CLION_FILES.map((f) => "./clion/" + f);
     case "vscode":
-      return VSCODE_FILES.map((f) => `/${tool}.${platform}.vscode/` + f);
+      return VSCODE_FILES.map((f) => `./${tool}.${platform}.vscode/` + f);
     default:
       return [];
   }
@@ -63,7 +63,7 @@ async function inline(template: TemplateStringsArray, ...links: string[]) {
     result.push(template[i]);
     if (i < links.length) {
       const link = links[i];
-      const content = await fetch(`/readme/${link}.md`).then((r) => r.text());
+      const content = await fetch(`./readme/${link}.md`).then((r) => r.text());
       result.push(content);
     }
   }
@@ -143,14 +143,14 @@ export async function generate(ids: string[]) {
   const [os, ide, platform, tool] = ids;
   const readme = await getReadmeSrc(ide, tool);
 
-  const srcUrls = SRC_FILES.map((f) => `/src/${f}`);
+  const srcUrls = SRC_FILES.map((f) => `./src/${f}`);
   const srcDest = SRC_FILES_DEST[tool];
 
   const ideUrls = getIdeUrls(ide, platform, tool);
   const ideDest = IDE_FILES_DEST[ide];
 
   const configUrls = [...COMMON_CONFIG_FILES, ...TOOL_CONFIG_FILES[tool]].map(
-    (f) => `/configs/${f}`
+    (f) => `./configs/${f}`
   );
 
   const zip = new JSZip();
