@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  counter-reset: steps;
+}
+
+.step--title::before {
+  counter-increment: steps;
+  content: counter(steps);
+  margin-right: 1rem;
+  font-size: 4rem;
+}
+
+.step--option{
+  height: unset;
+}
+.step--option__unselected {
+  border-color: hsl(var(--bc));
+}
+.step--option__unselected:hover {
+  border-color: hsl(var(--bc));
+}

@@ -1,0 +1,1 @@
+- 下载并安装 [Visual Studio](https://visualstudio.microsoft.com/zh-hans/downloads/#visual-studio-community-2022)。安装时，勾选“适用于 C++ 的桌面开发”。
