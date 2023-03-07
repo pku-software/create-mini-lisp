@@ -14,7 +14,7 @@ int main() {
             }
             auto tokens = Tokenizer::tokenize(line);
             for (auto& token : tokens) {
-                std::cout << token << std::endl;
+                std::cout << *token << std::endl;
             }
         } catch (std::runtime_error& e) {
             std::cerr << "Error: " << e.what() << std::endl;
