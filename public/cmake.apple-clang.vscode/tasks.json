@@ -4,7 +4,7 @@
     {
       "label": "configure",
       "type": "process",
-      "command": "/usr/local/bin/cmake",
+      "command": "cmake",
       "args": [
         "-DCMAKE_BUILD_TYPE=Debug",
         "-Bbuild"
@@ -14,7 +14,7 @@
     {
       "label": "build",
       "type": "process",
-      "command": "/usr/local/bin/cmake",
+      "command": "cmake",
       "args": [
         "--build",
         "build"

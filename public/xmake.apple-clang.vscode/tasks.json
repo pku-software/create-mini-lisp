@@ -3,7 +3,7 @@
   "tasks": [
     {
       "label": "update intellisense",
-      "command": "/usr/local/bin/xmake",
+      "command": "xmake",
       "args": [
         "project",
         "-k",
@@ -23,7 +23,7 @@
     },
     {
       "label": "xmake configure",
-      "command": "/usr/local/bin/xmake",
+      "command": "xmake",
       "args": [
         "f",
         "-mdebug"
@@ -36,7 +36,7 @@
         "kind": "build",
         "isDefault": true
       },
-      "command": "/usr/local/bin/xmake",
+      "command": "xmake",
       "problemMatcher": "$gcc"
     },
     {
