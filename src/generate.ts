@@ -31,8 +31,8 @@ function getIdeUrls(ide: string, platform: string, tool: string) {
 
 const IDE_FILES_DEST: Record<string, string> = {
   vs: "",
-  clion: ".idea",
-  vscode: ".vscode",
+  clion: ".idea/",
+  vscode: ".vscode/",
 };
 
 const SRC_FILES = [
@@ -46,8 +46,8 @@ const SRC_FILES = [
 
 const SRC_FILES_DEST: Record<string, string> = {
   sln: "",
-  cmake: "src",
-  xmake: "src",
+  cmake: "src/",
+  xmake: "src/",
 };
 
 const TOOL_CONFIG_FILES: Record<string, string[]> = {
@@ -127,7 +127,7 @@ ${runLink}`;
 async function saveFilesFromUrls(zip: JSZip, urls: string[], dest: string) {
   for (const url of urls) {
     const content = await fetch(url).then((r) => r.text());
-    zip.file(dest + "/" + url.split("/").pop(), content);
+    zip.file(dest + url.split("/").pop(), content);
   }
 }
 
