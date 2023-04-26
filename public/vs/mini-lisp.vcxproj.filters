@@ -35,5 +35,8 @@
     <ClInclude Include="tokenizer.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="rjsj_test.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
