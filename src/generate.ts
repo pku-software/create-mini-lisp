@@ -42,6 +42,7 @@ const SRC_FILES = [
   "main.cpp",
   "token.cpp",
   "tokenizer.cpp",
+  "rjsj_test.hpp"
 ];
 
 const SRC_FILES_DEST: Record<string, string> = {
