@@ -390,7 +390,7 @@ public:
                 }
             }
             bool ac = successNum == case_.cases.size();
-            std::cout << (ac ? "\033[1;32mTest Pass\033[0m\n" : "\033[1;31mTest failed\033[0m\n");
+            std::cout << (ac ? "\033[1;32mTest Passed\033[0m\n" : "\033[1;31mTest failed\033[0m\n");
             nums.emplace_back(successNum, case_.cases.size());
             allResult &= ac;
         }
