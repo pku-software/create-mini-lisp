@@ -14,7 +14,9 @@
 #include <cmath>
 #if __has_include(<concepts>)
 #include <concepts>
+#if __cpp_lib_concepts >= 202002L
 #define RMLT_INTERNAL_CONCEPT_ENABLED
+#endif
 #endif
 #include <deque>
 #include <iomanip>
