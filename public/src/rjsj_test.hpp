@@ -33,7 +33,11 @@
 
 #ifdef _WIN32
 #define NOMINMAX
+#define WIN32_LEAN_AND_MEAN
+// winnt.h defines TokenType, which conflicts with our TokenType.
+#define TokenType Win32TokenType
 #include <Windows.h>
+#undef TokenType
 #endif
 
 namespace rjsj_mini_lisp_test {
