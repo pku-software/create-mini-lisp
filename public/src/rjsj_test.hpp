@@ -316,18 +316,6 @@ inline Value buildValueFromStr(const std::string& str) {
     return std::move(*value);
 }
 
-template <typename T>
-struct IsCompleteImpl {
-    template <typename U>
-    static auto test(U*) -> std::integral_constant<bool, sizeof(U) == sizeof(U)>;
-    static auto test(...) -> std::false_type;
-    using type = decltype(test((T*)0));
-};
-
-// Whether T is a complete type.
-template <typename T>
-constexpr int IsComplete = IsCompleteImpl<T>::type::value;
-
 /**************
  * CONTROLLER *
  **************/
