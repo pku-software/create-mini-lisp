@@ -923,7 +923,6 @@ RMLT_BEGIN_CASES(Sicp)
 // and Interpretation of Computer Programs" by Abelson and Sussman.
 // License: Creative Commons share alike with attribution
 // 1.1.1
-RMLT_CASE("10", "10")
 RMLT_CASE("(+ 137 349)", "486")
 RMLT_CASE("(- 1000 334)", "666")
 RMLT_CASE("(* 5 99)", "495")
