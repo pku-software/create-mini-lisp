@@ -49,7 +49,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <UseStandardPreprocessor>true</UseStandardPreprocessor>
+      <UseStandardPreprocessor>false</UseStandardPreprocessor>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
