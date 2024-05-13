@@ -1,5 +1,5 @@
 // PKU Software Design (RJSJ) Mini-Lisp Test Library
-// Copyright (C) 2023 @pku-software at GitHub.com
+// Copyright (C) 2023-2024 @pku-software at GitHub.com
 
 // To use this library, follow the instructions below:
 // https://pku-software.github.io/project-doc/appendix/rjsj_test.html
@@ -8,8 +8,9 @@
 #ifndef RJSJ_MINI_LISP_TEST_H
 #define RJSJ_MINI_LISP_TEST_H
 
-// Comment below line if you want to manually control do testing or not.
+#ifndef RJSJ_TEST_ENABLED
 #define RJSJ_TEST_ENABLED 1
+#endif
 
 #include <cmath>
 #if __has_include(<concepts>)
