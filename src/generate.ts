@@ -29,6 +29,15 @@ function getIdeUrls(ide: string, platform: string, tool: string) {
   }
 }
 
+function getActionUrls(ide: string) {
+  switch (ide) {
+    case "vs":
+      return ["./github/judge-vs.yml"];
+    default:
+      return ["./github/judge-other.yml"];
+  }
+}
+
 const IDE_FILES_DEST: Record<string, string> = {
   vs: "",
   clion: ".idea/",
@@ -153,12 +162,14 @@ export async function generate(ids: string[]) {
   const configUrls = [...COMMON_CONFIG_FILES, ...TOOL_CONFIG_FILES[tool]].map(
     (f) => `./configs/${f}`
   );
+  const actionUrls = getActionUrls(ide);
 
   const zip = new JSZip();
   zip.file("README.md", readme);
   await saveFilesFromUrls(zip, srcUrls, srcDest);
   await saveFilesFromUrls(zip, ideUrls, ideDest);
   await saveFilesFromUrls(zip, configUrls, "");
+  await saveFilesFromUrls(zip, actionUrls, ".github/workflows/");
 
   const blob = await zip.generateAsync({ type: "blob" });
   saveAs("mini_lisp.zip", blob);
