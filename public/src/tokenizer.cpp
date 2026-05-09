@@ -41,6 +41,8 @@ TokenPtr Tokenizer::nextToken(int& pos) {
                     auto next = input[pos + 1];
                     if (next == 'n') {
                         string += '\n';
+                    } else if (next == 't') {
+                        string += '\t';
                     } else {
                         string += next;
                     }
