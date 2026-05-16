@@ -12,5 +12,5 @@ set_target_properties(
              RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_SOURCE_DIR}/bin
              RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_SOURCE_DIR}/bin)
 if(MSVC)
-  target_compile_options(mini_lisp PRIVATE /utf-8 /Zc:preprocessor)
+  target_compile_options(mini_lisp PRIVATE /utf-8)
 endif()
